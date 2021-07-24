@@ -105,4 +105,18 @@ todoController.getTodo = (req, res) => {
     });
 };
 
+todoController.getAllTodos = (req, res) => {
+  User.findOne({ _id: mongoose.Types.ObjectId(req.user._id) })
+    .then((user) => {
+      return res.status(httpStatus.OK).json({
+        allTodos: user.todos,
+      });
+    })
+    .catch((err) => {
+      return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+        err,
+      });
+    });
+};
+
 module.exports = todoController;
