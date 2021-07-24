@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "5d6f0f62-3d90-49e0-9b72-8ef811c7f9df",
+		"name": "TODO_APP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"sleman\",\r\n    \"email\":\"sleman@unifi.com\",\r\n    \"password\":\"123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/user/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sleman@unifi.com\",\r\n    \"password\": \"123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "TODO API",
+			"item": [
+				{
+					"name": "Add Todo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGZjNGU4ZGMzOGJiMDBlMTQyYzVlMGMiLCJpYXQiOjE2MjcxNDc5ODIsImV4cCI6MTYyNzIzNDM4Mn0.bBwfDAP5V_PUkiPvVS0TS5YJPKWm9MQTR7H0p4bUTHs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"todo content\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/todo/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"todo",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Todo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGZjNGU4ZGMzOGJiMDBlMTQyYzVlMGMiLCJpYXQiOjE2MjcxNDc5ODIsImV4cCI6MTYyNzIzNDM4Mn0.bBwfDAP5V_PUkiPvVS0TS5YJPKWm9MQTR7H0p4bUTHs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"new content\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/todo/60fc4f67c38bb00e142c5e0f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"todo",
+								"60fc4f67c38bb00e142c5e0f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Todos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGZjNGU4ZGMzOGJiMDBlMTQyYzVlMGMiLCJpYXQiOjE2MjcxNDc5ODIsImV4cCI6MTYyNzIzNDM4Mn0.bBwfDAP5V_PUkiPvVS0TS5YJPKWm9MQTR7H0p4bUTHs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/todo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"todo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one Todo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGZjNGU4ZGMzOGJiMDBlMTQyYzVlMGMiLCJpYXQiOjE2MjcxNDc5ODIsImV4cCI6MTYyNzIzNDM4Mn0.bBwfDAP5V_PUkiPvVS0TS5YJPKWm9MQTR7H0p4bUTHs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/todo/60fc4f67c38bb00e142c5e0f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"todo",
+								"60fc4f67c38bb00e142c5e0f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one Todo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGZjNGU4ZGMzOGJiMDBlMTQyYzVlMGMiLCJpYXQiOjE2MjcxNDc5ODIsImV4cCI6MTYyNzIzNDM4Mn0.bBwfDAP5V_PUkiPvVS0TS5YJPKWm9MQTR7H0p4bUTHs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/todo/60fc4f67c38bb00e142c5e0f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"todo",
+								"60fc4f67c38bb00e142c5e0f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
